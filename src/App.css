@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+/* ---------- Global Styles ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  margin-top: 60px; /* prevent overlap with fixed navbar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+section {
   min-height: 100vh;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+p {
+  max-width: 600px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #222;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.navbar a {
   color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a:hover {
+  color: #ff9800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---------- Projects ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ---------- Skills ---------- */
+#skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+#skills li {
+  background: #eee;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+#skills li:hover {
+  background: #ddd;
+}
+
+/* ---------- Resume ---------- */
+#resume a {
+  background: #ff9800;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#resume a:hover {
+  background: #e68900;
+}
+
+/* ---------- Contact ---------- */
+#contact p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ---------- Animations ---------- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
   }
 }
